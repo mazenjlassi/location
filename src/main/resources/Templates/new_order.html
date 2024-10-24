@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Ajout Produit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container my-5">
+    <h3> Ajout Order</h3>
+    <div class="card">
+        <div class="card-body">
+            <form th:action="@{/saveOrder}" th:object="${OrderForm}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-8">
+                        <label for="ref" class="col-form-label">Title</label>
+                        <input type="text" th:field="*{ref}" class="form-control" id="ref" placeholder="Enter order ref" required />
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="price" class="col-form-label">price</label>
+                        <input type="text" th:field="*{price}" class="form-control" id="price" placeholder="Enter price" />
+                    </div>
+
+                    <div class="form-group col-md-8">
+                        <label for="date" class="col-form-label">date</label>
+                        <input type="text" th:field="*{date}" class="form-control" id="date" placeholder="Enter product date" />
+                    </div>
+                    <div class="col-md-6">
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </div>
+                    <input type="hidden" th:field="*{id}">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
