@@ -15,7 +15,7 @@ import java.io.Serializable;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Customer extends User{
 
-    String adress;
+    String address;
     String city;
     @ManyToOne
     @JoinColumn (name = "id_order")

@@ -1,13 +1,11 @@
 package com.example.tp1spring.Services;
 
-
 import com.example.tp1spring.Repository.CustomerRepository;
 import com.example.tp1spring.entity.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-
 @Service
 public class CustomerService {
     @Autowired
@@ -15,18 +13,22 @@ public class CustomerService {
     public Customer createCustomer(Customer customer){
         return customerRepository.save(customer);
     }
-    public List<Customer> getallcustomer(){
-        return  customerRepository.findAll();
+    public List<Customer> getAllCustomer()
+    {
+        return customerRepository.findAll();
     }
-    public Customer getCustomerBiID(Integer id){
+    public Customer getCustomerById(Integer id)
+    {
         return customerRepository.findById(id).get();
     }
-    public Customer updateCustomer(Customer customer){
+    public Customer updateCustomer(Customer customer)
+    {
         return customerRepository.saveAndFlush(customer);
     }
-    public void deleteCustomer(Integer id){
-        customerRepository.deleteById(id);
+    public void deleteCustomerById(Integer id){
+          customerRepository.deleteById(id);
     }
 
-}
 
+
+}

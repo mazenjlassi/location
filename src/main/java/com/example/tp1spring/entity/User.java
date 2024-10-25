@@ -15,7 +15,7 @@ import java.io.Serializable;
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class User implements Serializable {
     @Id
-    @GeneratedValue(strategy=GenerationType.TABLE)
+      @GeneratedValue(strategy=GenerationType.TABLE)
     int id;
     String name;
     float salary;

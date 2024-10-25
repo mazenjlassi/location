@@ -25,18 +25,18 @@ public class CustomerController {
     @RequestMapping(value = "/saveCustomer" , method = RequestMethod.POST)
     public String saveCategory(@ModelAttribute("CustomerForm") Customer customer) {
         customerService.createCustomer(customer);
-        return "redirect:/all";
+        return "redirect:/allCustomer";
     }
     @RequestMapping("/allCustomer")
     public String listecustomer(Model model){
-        List<Customer> listCustomer =  customerService.getallcustomer();
+        List<Customer> listCustomer =  customerService.getAllCustomer();
         model.addAttribute("listCustomer", listCustomer);
         return "liste_customer";
     }
 
     @GetMapping("deleteCustomer/{id}")
     public String deleteCustomer(@PathVariable("id")Integer id){
-        customerService.deleteCustomer(id);
+        customerService.deleteCustomerById(id);
         return "redirect:/allCustomer";
     }
 

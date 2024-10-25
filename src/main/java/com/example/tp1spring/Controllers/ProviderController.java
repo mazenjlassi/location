@@ -19,13 +19,13 @@ public class ProviderController {
     public String addProvider(Model model) {
         Provider provider = new Provider();
         model.addAttribute("provider", provider);
-        return "add_Provider";
+        return "new_provider";
     }
 
     @RequestMapping(value = "/saveProvider",method = RequestMethod.POST)
     public String saveProvider(@ModelAttribute("ProviderForm")Provider provider) {
         providerService.getAllProviders().add(provider);
-        return "redirect:/allProviders";
+        return "redirect:/allProvider";
     }
     @RequestMapping("/allProvider")
     public String listeprovider(Model model){
@@ -37,7 +37,7 @@ public class ProviderController {
     @GetMapping("deleteProvider/{id}")
     public String deleteProvider(@PathVariable("id")Integer id){
         ProviderService.deleteProvider(id);
-        return "redirect:/allCategory";
+        return "redirect:/allProvider";
     }
 
 
